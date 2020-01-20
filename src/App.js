@@ -1,7 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { AccessAlarm, ThreeDRotation } from '@material-ui/icons';
 
 function App() {
   return (
