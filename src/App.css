@@ -42,9 +42,35 @@ Dark Shades: #27272B;
 
 }
 /**************** ChampionList CSS *********************/
+.allChampionCard {
+  background-color: #A49691;
+}
 
+.championCard {
+  background-color: #967D72;
+  padding: 0.3em;
+  margin: 0.3em;
 
+  border-color: #27272B;
+  border-width: 4px;
+  border-style: solid;
 
+  float: left;
+  align-items: center;
+
+  width: 15em;
+}
+
+.championCard img{
+  float: left;
+}
+
+.champion-details {
+  float:left;
+  margin-left: 2px;
+
+  top: 30%;
+}
 
 
 
