@@ -1,7 +1,12 @@
 import React from 'react';
 
-const ChampionCard = ({}) => (
-  <div></div>
-);
+const ChampionDetail = (props) => {
+	console.log("Details", props)
+	return (
+	  <div>
+	  	<p> test </p>
+	  </div>
+	);
+}
 
-export default ChampionCard;
+export default ChampionDetail;

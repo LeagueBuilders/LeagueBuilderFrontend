@@ -56,9 +56,21 @@ Dark Shades: #27272B;
   border-style: solid;
 
   float: left;
+  align-items: center;
+
+  width: 15em;
 }
 
+.championCard img{
+  float: left;
+}
 
+.champion-details {
+  float:left;
+  margin-left: 2px;
+
+  top: 30%;
+}
 
 
 

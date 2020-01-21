@@ -1,8 +1,4 @@
 import React from 'react';
-import ChampionDetail from "./ChampionDetail.js"
-
-
-
 
 const ChampionCard = (props) => {
 	
@@ -12,6 +8,9 @@ const ChampionCard = (props) => {
 	  		onClick={() => {props.clickEvent(props.champion)}}
 	  	>
 	   		<img src={props.img_url} alt={props.champion.image.full} />
+	   		<div className="champion-details">
+	   			<h4 className="champion-name">{props.champion.id}</h4>
+	   		</div>
 	   	</div>
 	);
 }
