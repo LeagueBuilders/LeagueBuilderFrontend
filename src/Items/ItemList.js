@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ItemBox from './ItemBox'
+import ItemDetail from './ItemDetail'
 
 class ItemList extends Component {
 
@@ -31,15 +32,24 @@ class ItemList extends Component {
     this.setState({detailedView: !this.state.detailedView})
   }
 
-  showDetail = () => {
+  clickedItem = (item) => {
+    console.log("CLicky", item, this.state);
+    this.toggleDetail(item);
+    this.chooseItem(item);
+  }
 
+  showDetail = () => {
+    if (this.state.detailedView) {
+      return <ItemDetail item={this.state.selectedItem} url={this.ImageUrl} />
+    }
+    else return ''
   }
 
   renderItems = (itemObject) => {
-    console.log(itemObject);
     let items = []
     for (let item in itemObject) {
-      items.push(itemObject[item].image.full)
+      // items.push(itemObject[item].image.full)
+      items.push(item)
     }
     return items
   }
@@ -47,9 +57,11 @@ class ItemList extends Component {
 
   render() {
     return (
-      <div className='detailPane'></div>
-      <div className='itemList'>
-        {this.renderItems(this.state.items).map(i => <ItemBox item={i} url={this.ImageUrl} />)}
+      <div>
+        <div className='detailPane'>{this.showDetail()}</div>
+        <div className='itemList'>
+          {this.renderItems(this.state.items).map(i => <ItemBox item={{i, ...this.state.items[i]}} url={this.ImageUrl} handleClick={this.clickedItem} />)}
+        </div>
       </div>
     );
   }
