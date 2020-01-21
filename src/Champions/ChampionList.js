@@ -1,29 +1,41 @@
 import React from 'react';
-import ChampionCard from "./ChampionCard";
+import ChampionCard from "./ChampionCard.js";
+
+const LOL_VERSION = "10.1.1";
+//ex: http://ddragon.leagueoflegends.com/cdn/10.1.1/data/en_US/championFull.json
+const CHAMP_DATA_URL = `http://ddragon.leagueoflegends.com/cdn/${LOL_VERSION}/data/en_US/championFull.json`;
+//ex: http://ddragon.leagueoflegends.com/cdn/10.1.1/img/champion/Aatrox.png
+const CHAMP_IMG_URL = `http://ddragon.leagueoflegends.com/cdn/${LOL_VERSION}/img/champion/`;
 
 class ChampionList extends React.Component {
-	state ={
-		champions: []
-	}
+  	//To show all the champions
+  	showAllChamps = () => {
+  		let allChamps = this.props.filterChamp
+  		let champInArray = []
+ 
+  		for (let property in allChamps) {
+  			champInArray.push(allChamps[property])
+  		}
 
-	componentDidMount(){
-  	//console.log("Fetching Data")
-  	fetch("http://ddragon.leagueoflegends.com/cdn/10.1.1/data/en_US/championFull.json")
-  		.then((r) => r.json())
-  		.then((allChamps) => {
-  			let champData = allChamps.data
-
-  			this.setState({
-  				champions: champData
-  			})
+  		return champInArray.map((champ) => {
+  			return <ChampionCard 
+  						key={champ.id}
+  						champion={champ}
+  						img_url={this.props.base_img_url + champ.image.full}
+  						clickEvent={this.props.onClickChampion}
+  					/>
   		})
   	}
   
   	render() {
-  		console.log(this.state.champions)
 	  	return (
 	  		<div>
-	  			ChampionList Here
+	  			<div id="searchBar">
+	  				<p> Placeholder for Search Bar </p>
+	  			</div>
+	  			<div className="allChampionCard">
+	  				{this.showAllChamps()}
+	  			</div>
 	  		</div>
 	  	);
   	}
