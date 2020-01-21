@@ -9,6 +9,39 @@ function App() {
     <div id="Main">
       <NavBar />
       <ChampionList />
+      <p> test </p>
+      <p> test </p>
+      <p> test </p>
+      <p> test </p>
+      <p> test </p>
+      <p> test </p>
+      <p> test </p>
+      <p> test </p>
+      <p> test </p>
+      <p> test </p>
+      <p> test </p>
+      <p> test </p>
+      <p> test </p>
+      <p> test </p>
+      <p> test </p>
+      <p> test </p>
+      <p> test </p>
+      <p> test </p>
+      <p> test </p>
+
+      <p> test </p>
+      <p> test </p>
+      <p> test </p>
+      <p> test </p>
+      <p> test </p>
+      <p> test </p>
+      <p> test </p>
+      <p> test </p>
+      <p> test </p>
+      <p> test </p>
+      <p> test </p>
+      <p> test </p>
+      <p> test </p>
     </div>
   );
 }
