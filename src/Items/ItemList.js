@@ -60,7 +60,7 @@ class ItemList extends Component {
       <div>
         <div className='detailPane'>{this.showDetail()}</div>
         <div className='itemList'>
-          {this.renderItems(this.state.items).map(i => <ItemBox item={{i, ...this.state.items[i]}} url={this.ImageUrl} handleClick={this.clickedItem} />)}
+          {this.renderItems(this.state.items).map(i => <ItemBox key={i} item={{i, ...this.state.items[i]}} url={this.ImageUrl} handleClick={this.clickedItem} />)}
         </div>
       </div>
     );
