@@ -3,7 +3,7 @@ import React from 'react';
 const loopStats = (statObj) => {
   let statsList = []
   for (let key in statObj){
-    statsList.push(<li>{key + ": " + statObj[key]}</li>)
+    statsList.push(key + ": " + statObj[key])
   }
   return statsList
 }
@@ -15,7 +15,7 @@ const ItemDetail = (props) => (
     <h3>{props.item.plaintext}</h3>
     <p>{props.item.description}</p>
     <p>Cost: {props.item.gold.total}</p>
-    <p>Stats:<ul>{loopStats(props.item.stats).map((stat) => <li>{stat}</li>)}</ul></p>
+    <div>Stats:<ul>{loopStats(props.item.stats).map((stat) => <li>{stat}</li>)}</ul></div>
   </div>
 );
 
