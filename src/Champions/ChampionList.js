@@ -20,6 +20,7 @@ class ChampionList extends React.Component {
   	}
   
   	render() {
+  		console.log(this.state.champions)
 	  	return (
 	  		<div>
 	  			ChampionList Here
