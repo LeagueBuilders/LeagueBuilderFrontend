@@ -3,7 +3,8 @@ import './App.css';
 import ChampionList from "./Champions/ChampionList.js"
 import ChampionDetail from "./Champions/ChampionDetail.js"
 import NavBar from "./Champions/NavBar.js"
-import { Route, Switch, withRouter } from 'react-router-dom'
+import { BrowserRouter, Route, Switch, NavLink } from 'react-router-dom'
+import BuildPage from './Build/BuildPage'
 
 
 const LOL_VERSION = "10.1.1";
@@ -42,9 +43,8 @@ class App extends React.Component {
             />
   }
 
-  renderChamp = (champName) => {
-    let id = champName.match.params.id
-    id = id.charAt(0).toUpperCase() + id.slice(1).toLowerCase()
+  fixId = (idParam) => {
+    let id = idParam.charAt(0).toUpperCase() + idParam.slice(1).toLowerCase()
 
     switch(id) {
       case "Aurelionsol":
@@ -90,7 +90,22 @@ class App extends React.Component {
         id="XinZhao"
         break;
     }
+    return id
+  }
+
+  renderChamp = (champName) => {
+    let id = this.fixId(champName.match.params.id)
+
     return <ChampionDetail champ={this.state.champions[id]} />
+  }
+
+  renderBuild = (champName) => {
+    let id = this.fixId(champName.match.params.id)
+
+    return  <BuildPage
+              champ={this.state.champions[id]}
+            />
+
   }
 
   // ***********  Event Handlers ************
@@ -107,14 +122,20 @@ class App extends React.Component {
   render() {
     return (
       <div id="Main">
-        <NavBar logoOnClick={this.onClickLogo}/>
-        <Switch>
-          <Route path="/" exact component={this.renderAllChamp} />
-          <Route path="/champion/:id" render={this.renderChamp} />
-        </Switch>
+        <NavBar />
+        <BrowserRouter>
+          <Switch>
+            <Route path="/" exact component={this.renderAllChamp} />
+            <Route path="/champion/:id" render={this.renderChamp} />
+            <Route
+              path="/build/:id"
+              render={this.renderBuild}
+              />
+          </Switch>
+        </BrowserRouter>
       </div>
     );
   }
 }
 
-export default withRouter(App);
+export default App;

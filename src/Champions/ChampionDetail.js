@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom'
 const ChampionDetail = (props) => {
 
 	const SplashUrl = 'http://ddragon.leagueoflegends.com/cdn/img/champion/splash/';
@@ -7,6 +7,8 @@ const ChampionDetail = (props) => {
 
 	const showChamp = ({champ}=props) => {
 		if (champ){
+
+			let champSplashUrl = SplashUrl + champ.id + '_0.jpg'
 
 			const statTable = (
 				<table>
@@ -40,7 +42,6 @@ const ChampionDetail = (props) => {
 				</table>
 			);
 
-			let champSplashUrl = SplashUrl + champ.id + '_0.jpg'
 			return (
 				<div>
 					<img className="champSplash background" src={ champSplashUrl } />
@@ -48,6 +49,9 @@ const ChampionDetail = (props) => {
 					<h2>{champ.title}</h2>
 					<h3>{champ.blurb}</h3>
 					<div className="statTable table stats">{statTable}</div>
+					<Link to='/build/{champ.id}'>
+						<button>Create Build</button>
+					</Link>
 				</div>
 			)
 		}

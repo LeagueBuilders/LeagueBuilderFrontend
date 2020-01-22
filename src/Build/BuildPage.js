@@ -2,8 +2,10 @@ import React from 'react';
 
 const BuildPage = ({}) => (
   <div>
-    <Inventory />
-    <ItemList />
+    LOL
+    {/*<Inventory />
+    <ItemList />*/}
+
 
   </div>
 );
