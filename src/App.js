@@ -3,7 +3,7 @@ import './App.css';
 import ChampionList from "./Champions/ChampionList.js"
 import ChampionDetail from "./Champions/ChampionDetail.js"
 import NavBar from "./Champions/NavBar.js"
-import { BrowserRouter, Route, Switch, NavLink } from 'react-router-dom'
+import { Route, Switch, withRouter } from 'react-router-dom'
 import BuildPage from './Build/BuildPage'
 
 
@@ -122,20 +122,14 @@ class App extends React.Component {
   render() {
     return (
       <div id="Main">
-        <NavBar />
-        <BrowserRouter>
-          <Switch>
-            <Route path="/" exact component={this.renderAllChamp} />
-            <Route path="/champion/:id" render={this.renderChamp} />
-            <Route
-              path="/build/:id"
-              render={this.renderBuild}
-              />
-          </Switch>
-        </BrowserRouter>
+        <NavBar logoOnClick={this.onClickLogo}/>
+         <Switch>
+           <Route path="/" exact component={this.renderAllChamp} />
+           <Route path="/champion/:id" render={this.renderChamp} />
+         </Switch>
       </div>
     );
   }
 }
 
-export default App;
+ export default withRouter(App);
