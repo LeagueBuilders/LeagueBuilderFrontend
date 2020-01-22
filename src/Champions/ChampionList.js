@@ -25,7 +25,9 @@ class ChampionList extends React.Component {
 	  	return (
 	  		<div>
 	  			<div id="searchBar">
-	  				<p> Placeholder for Search Bar </p>
+	  				<form>
+			        	<input type="text" placeholder="Search" onChange={() => console.log}/>
+			        </form>
 	  			</div>
 	  			<div className="allChampionCard">
 	  				{this.showAllChamps()}

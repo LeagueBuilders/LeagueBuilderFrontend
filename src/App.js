@@ -17,8 +17,7 @@ const CHAMP_IMG_URL = `http://ddragon.leagueoflegends.com/cdn/${LOL_VERSION}/img
 class App extends React.Component {
   state ={
     champions: [],
-    filterChamp: [],
-    selectedChamp: {}
+    filterChamp: []
   }
 
   componentDidMount(){
