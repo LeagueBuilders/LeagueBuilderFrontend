@@ -14,13 +14,15 @@ Dark Shades: #27272B;
 
 
 */
-
+body {
+  background-color: #27272B;
+}
 
 /**************** NavBar CSS *********************/
 .NavBar {
   display: flex;
-  align-items: center; /* Makes sure the item is in center of the div (in terms of height) */
   background-color: #27272B;
+  align-items: center; /* Makes sure the item is in center of the div (in terms of height) */
   height: 10em;
   width: 100%;
 
@@ -42,8 +44,17 @@ Dark Shades: #27272B;
 
 }
 /**************** ChampionList CSS *********************/
+#searchBar {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  color: #F2F0EF;
+}
+
 .allChampionCard {
   background-color: #A49691;
+  width: 90%;
+  margin: auto;
 }
 
 .championCard {
@@ -51,14 +62,20 @@ Dark Shades: #27272B;
   padding: 0.3em;
   margin: 0.3em;
 
-  border-color: #27272B;
+  /*border-color: #27272B;
   border-width: 4px;
-  border-style: solid;
+  border-style: solid;*/
+  border-radius: 0.2em;
+  box-shadow: 0.2em 0.3em #806A61;
 
   float: left;
   align-items: center;
 
   width: 15em;
+}
+
+.championCard:hover {
+  box-shadow: 0.25em 0.4em #806A61;
 }
 
 .championCard img{
@@ -72,8 +89,18 @@ Dark Shades: #27272B;
   top: 30%;
 }
 
+/**************** Champion Detail CSS *********************/
 
+.champDetail {
+  color: #F2F0EF;
+  width: 70%;
+  margin: auto;
+  padding: 2em;
+}
 
+.champSplash {
+  width: 100%;
+}
 
 
 

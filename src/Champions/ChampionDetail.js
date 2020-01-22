@@ -43,7 +43,7 @@ const ChampionDetail = (props) => {
 			);
 
 			return (
-				<div>
+				<div className="champDetail">
 					<img className="champSplash background" src={ champSplashUrl } />
 					<div classname="description info"><h1>{champ.name}</h1></div>
 					<h2>{champ.title}</h2>
