@@ -21,6 +21,7 @@ body {
 /**************** NavBar CSS *********************/
 .NavBar {
   display: flex;
+  background-color: #27272B;
   align-items: center; /* Makes sure the item is in center of the div (in terms of height) */
   height: 10em;
   width: 100%;
@@ -43,8 +44,17 @@ body {
 
 }
 /**************** ChampionList CSS *********************/
+#searchBar {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  color: #F2F0EF;
+}
+
 .allChampionCard {
   background-color: #A49691;
+  width: 90%;
+  margin: auto;
 }
 
 .championCard {
@@ -79,8 +89,18 @@ body {
   top: 30%;
 }
 
+/**************** Champion Detail CSS *********************/
 
+.champDetail {
+  color: #F2F0EF;
+  width: 70%;
+  margin: auto;
+  padding: 2em;
+}
 
+.champSplash {
+  width: 100%;
+}
 
 
 
