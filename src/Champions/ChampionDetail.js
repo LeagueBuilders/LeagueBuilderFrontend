@@ -14,7 +14,7 @@ const ChampionDetail = (props) => {
 				<table>
 					<thead>
 						<tr>
-							<th colspan="2">Stats</th>
+							<th colSpan="2">Stats</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -45,7 +45,7 @@ const ChampionDetail = (props) => {
 			return (
 				<div className="champDetail">
 					<img className="champSplash background" src={ champSplashUrl } />
-					<div classname="description info"><h1>{champ.name}</h1></div>
+					<div className="description info"><h1>{champ.name}</h1></div>
 					<h2>{champ.title}</h2>
 					<h3>{champ.blurb}</h3>
 					<div className="statTable table stats">{statTable}</div>
