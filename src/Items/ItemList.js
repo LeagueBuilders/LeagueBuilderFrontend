@@ -7,7 +7,8 @@ class ItemList extends Component {
   state = {
     items: [],
     selectedItem: {},
-    detailedView: false
+    detailedView: false,
+    hovering: false
   }
 
   ImageUrl = 'http://ddragon.leagueoflegends.com/cdn/10.1.1/img/item/'
@@ -33,7 +34,6 @@ class ItemList extends Component {
   }
 
   clickedItem = (item) => {
-    console.log("CLicky", item, this.state);
     this.toggleDetail(item);
     this.chooseItem(item);
   }
@@ -54,13 +54,22 @@ class ItemList extends Component {
     return items
   }
 
+  showTooltip = (evt, item) => {
+    this.setState({
+      hovering: true,
+    })
+    return (<ItemDetail item={item} />)
+
+  }
+
+
 
   render() {
     return (
       <div>
         <div className='detailPane'>{this.showDetail()}</div>
         <div className='itemList'>
-          {this.renderItems(this.state.items).map(i => <ItemBox key={i} item={{i, ...this.state.items[i]}} url={this.ImageUrl} handleClick={this.clickedItem} />)}
+          {this.renderItems(this.state.items).map(i => <ItemBox key={i} item={{i, ...this.state.items[i]}} url={this.ImageUrl} handleClick={this.clickedItem} handleHover={this.showTooltip} />)}
         </div>
       </div>
     );
