@@ -13,11 +13,20 @@ const CHAMP_DATA_URL = `http://ddragon.leagueoflegends.com/cdn/${LOL_VERSION}/da
 //ex: http://ddragon.leagueoflegends.com/cdn/10.1.1/img/champion/Aatrox.png
 const CHAMP_IMG_URL = `http://ddragon.leagueoflegends.com/cdn/${LOL_VERSION}/img/champion/`;
 
+//How some Vars work
+/*
+  champions - a list of all champ with all data, never changed
+  positionFilterChamp - We first filter whats being displayed by filtering the position they are in (top, mid, jg, etc)
+  searchFilterChamp - Then we filter based on what the user types down in the search bar
+  search - The data in search bar
 
+*/
 class App extends React.Component {
   state ={
     champions: [],
-    filterChamp: []
+    positionFilterChamp: [],
+    searchFilterChamp: [],
+    search: "",
   }
 
   componentDidMount(){
@@ -29,16 +38,20 @@ class App extends React.Component {
 
         this.setState({
           champions: champData,
-          filterChamp: champData
+          positionFilterChamp: champData,
+          searchFilterChamp: champData
         })
       })
   }
 
   renderAllChamp = () => {
+
     return <ChampionList
-              filterChamp={this.state.filterChamp}
+              filterChamp={this.state.searchFilterChamp}
               base_img_url={CHAMP_IMG_URL}
               onClickChampion={this.onClickChampion}
+              search={this.state.search}
+              onChangeSearchBar={this.onChangeSearchBar}
             />
   }
 
@@ -50,16 +63,28 @@ class App extends React.Component {
         id="AurelionSol"
         break;
       case "Drmundo":
+      case "Mundo":
         id="DrMundo"
         break;
+      case "Gp":
+        id="Gangplank"
+        break;
       case "Jarvaniv":
+      case "J4":
         id="JarvanIV"
         break;
       case "Kogmaw":
         id="KogMaw"
         break;
+      case "Lb":
+        id="Leblanc"
+        break;
       case "Leesin":
+      case "Lee":
         id="LeeSin"
+        break;
+      case "Cancer":
+        id="Malzahar"
         break;
       case "Masteryi":
         id="MasterYi"
@@ -70,6 +95,7 @@ class App extends React.Component {
         break;
       case "Monkeyking":
       case "Wukong":
+      case "Goku":
         id="MonkeyKing"
         break;
       case "Reksai":
@@ -85,7 +111,11 @@ class App extends React.Component {
       case "Tf":
         id="TwistedFate"
         break;
+      case "Ww":
+        id="Warwick"
+        break;
       case "Xinzhao":
+      case "Winsnao":
         id="XinZhao"
         break;
     }
@@ -114,8 +144,72 @@ class App extends React.Component {
     }
 
     onClickLogo = () => {
-      console.log("Logo Clicked")
       this.props.history.push('/')
+    }
+
+    onChangeSearchBar = (event) => {
+      let newSearch = event.target.value;
+
+      //Getting the data of the champion after filtered.
+      //IMPORTANT: Remember SearchFilter exist after position filter 
+      let resultChamp = this.state.positionFilterChamp
+
+      if (newSearch.length > 0)
+      {
+        let champNames = Object.keys(resultChamp)
+
+        //This is the return Hash for the reduce
+        //By default reduce first argument is an array
+        let tempChamps = {}
+        //CurrentValue = the key of the champions
+        resultChamp = champNames.reduce((a, currentValue) => {
+          //Exceptions where name don't match. organized by champion id in the API
+          let tempSearch = newSearch.toLowerCase();
+          switch(tempSearch) { //make sure tempSearch is always all lowercase
+            case "j4":
+              tempSearch = "jarvaniv"
+              break;
+            case "lb":
+              tempSearch = "leblanc"
+              break;
+            case "mf":
+              tempSearch = "missfortune"
+              break;
+            case "cancer":
+              tempSearch = "malzahar"
+              break;
+            case "wukong": //Wukong is called MonkeyKing in the api
+            case "goku":
+              tempSearch = "monkeyking"
+              break;
+            case "devil":
+              tempSearch = "teemo"
+              break;
+            case "tf":
+              tempSearch = "twistedfate"
+              break;
+            case "ww":
+              tempSearch = "warwick"
+              break;
+            case "winsnao":
+              tempSearch = "xinzhao"
+              break;
+          }
+
+          //If then names match, put the champion inside the return hash.
+          if (currentValue.toLowerCase().includes(tempSearch))
+          {
+            tempChamps[currentValue] = resultChamp[currentValue];
+          }
+          return tempChamps;
+        }, [])
+      }
+
+      //Changing the search result + new filtered champs
+      this.setState({
+        search: newSearch,
+        searchFilterChamp: resultChamp
+      })
     }
 
   render() {
