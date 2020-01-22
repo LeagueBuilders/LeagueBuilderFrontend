@@ -14,13 +14,14 @@ Dark Shades: #27272B;
 
 
 */
-
+body {
+  background-color: #27272B;
+}
 
 /**************** NavBar CSS *********************/
 .NavBar {
   display: flex;
   align-items: center; /* Makes sure the item is in center of the div (in terms of height) */
-  background-color: #27272B;
   height: 10em;
   width: 100%;
 
@@ -51,14 +52,20 @@ Dark Shades: #27272B;
   padding: 0.3em;
   margin: 0.3em;
 
-  border-color: #27272B;
+  /*border-color: #27272B;
   border-width: 4px;
-  border-style: solid;
+  border-style: solid;*/
+  border-radius: 0.2em;
+  box-shadow: 0.2em 0.3em #806A61;
 
   float: left;
   align-items: center;
 
   width: 15em;
+}
+
+.championCard:hover {
+  box-shadow: 0.25em 0.4em #806A61;
 }
 
 .championCard img{
