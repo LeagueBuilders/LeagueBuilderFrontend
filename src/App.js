@@ -3,12 +3,8 @@ import './App.css';
 import ChampionList from "./Champions/ChampionList.js"
 import ChampionDetail from "./Champions/ChampionDetail.js"
 import NavBar from "./Champions/NavBar.js"
-<<<<<<< HEAD
 import { BrowserRouter, Route, Switch, NavLink } from 'react-router-dom'
 import BuildPage from './Build/BuildPage'
-=======
-import { Route, Switch, withRouter } from 'react-router-dom'
->>>>>>> 13eb53a8fc74a4820aaaf488ece837abdb6708b3
 
 
 const LOL_VERSION = "10.1.1";
@@ -126,7 +122,6 @@ class App extends React.Component {
   render() {
     return (
       <div id="Main">
-<<<<<<< HEAD
         <NavBar />
         <BrowserRouter>
           <Switch>
@@ -138,13 +133,6 @@ class App extends React.Component {
               />
           </Switch>
         </BrowserRouter>
-=======
-        <NavBar logoOnClick={this.onClickLogo}/>
-        <Switch>
-          <Route path="/" exact component={this.renderAllChamp} />
-          <Route path="/champion/:id" render={this.renderChamp} />
-        </Switch>
->>>>>>> 13eb53a8fc74a4820aaaf488ece837abdb6708b3
       </div>
     );
   }
