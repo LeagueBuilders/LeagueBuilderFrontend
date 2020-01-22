@@ -1,8 +1,8 @@
 import React from 'react';
 
-const NavBar = ({}) => (
+const NavBar = (props) => (
   	<div className="NavBar"> 
-  		<img src='/LeagueBuilderLogo.png' alt="Logo"/>
+  		<img src='/LeagueBuilderLogo.png' alt="Logo" onClick={props.logoOnClick}/>
 		<p> League Item Builder </p>
   	</div>
 );
