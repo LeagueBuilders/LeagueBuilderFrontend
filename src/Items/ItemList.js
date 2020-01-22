@@ -55,13 +55,11 @@ class ItemList extends Component {
   }
 
   showTooltip = (evt, item) => {
-    // debugger
     this.setState({
       hovering: true,
     })
     return (<ItemDetail item={item} />)
 
-    // it.target.
   }
 
 

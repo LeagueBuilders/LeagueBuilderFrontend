@@ -35,7 +35,7 @@ class App extends React.Component {
   }
 
   renderAllChamp = () => {
-    return <ChampionList 
+    return <ChampionList
               filterChamp={this.state.filterChamp}
               base_img_url={CHAMP_IMG_URL}
               onClickChampion={this.onClickChampion}
@@ -45,7 +45,7 @@ class App extends React.Component {
   renderChamp = (champName) => {
     let id = champName.match.params.id
     id = id.charAt(0).toUpperCase() + id.slice(1).toLowerCase()
-    
+
     switch(id) {
       case "Aurelionsol":
         id="AurelionSol"
@@ -90,7 +90,6 @@ class App extends React.Component {
         id="XinZhao"
         break;
     }
-    console.log(this.state.champions[id])
     return <ChampionDetail champ={this.state.champions[id]} />
   }
 
@@ -103,7 +102,7 @@ class App extends React.Component {
     return (
       <div id="Main">
         <NavBar />
-        <BrowserRouter> 
+        <BrowserRouter>
           <Switch>
             <Route path="/" exact component={this.renderAllChamp} />
             <Route path="/champion/:id" render={this.renderChamp} />
