@@ -1,13 +1,13 @@
 import React from 'react';
-
-const BuildPage = ({}) => (
-  <div>
-    LOL
-    {/*<Inventory />
-    <ItemList />*/}
+import ItemList from '../Items/ItemList';
+import ItemDetail from '../Items/ItemDetail';
 
 
+const BuildPage = ({}) => {
+  console.log('hi');
+  return <div>
+    <ItemList />
   </div>
-);
+};
 
 export default BuildPage;

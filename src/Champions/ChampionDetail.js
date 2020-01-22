@@ -45,11 +45,14 @@ const ChampionDetail = (props) => {
 			return (
 				<div className="champDetail">
 					<img className="champSplash background" src={ champSplashUrl } />
-					<div className="description info"><h1>{champ.name}</h1></div>
-					<h2>{champ.title}</h2>
+					<div className="title">
+						<h1>{champ.name} -  {champ.title}</h1>
+					</div>
+					<div className="description info">
 					<h3>{champ.blurb}</h3>
+				</div>
 					<div className="statTable table stats">{statTable}</div>
-					<Link to='/build/{champ.id}'>
+					<Link to={`/build/${champ.id}/Tets`}>
 						<button>Create Build</button>
 					</Link>
 				</div>

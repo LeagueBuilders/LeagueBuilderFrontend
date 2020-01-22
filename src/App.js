@@ -151,7 +151,7 @@ class App extends React.Component {
       let newSearch = event.target.value;
 
       //Getting the data of the champion after filtered.
-      //IMPORTANT: Remember SearchFilter exist after position filter 
+      //IMPORTANT: Remember SearchFilter exist after position filter
       let resultChamp = this.state.positionFilterChamp
 
       if (newSearch.length > 0)
@@ -219,7 +219,8 @@ class App extends React.Component {
          <Switch>
            <Route path="/" exact component={this.renderAllChamp} />
            <Route path="/champion/:id" render={this.renderChamp} />
-         </Switch>
+          <Route path="/build/:id" render={this.renderBuild} />
+        </Switch>
       </div>
     );
   }

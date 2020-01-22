@@ -88,6 +88,9 @@ body {
 
   top: 30%;
 }
+.title {
+  width: 100%
+}
 
 /**************** Champion Detail CSS *********************/
 
@@ -102,15 +105,43 @@ body {
   width: 100%;
 }
 
+.statTable {
+  float: right;
+  width: 30%;
+  margin-top: 1em;
+  margin-left: 1em;
+}
+
+.description{
+  width: 65%;
+  float: left;
+}
 
 
 
 
+/**************** BuildPage CSS *********************/
 
 
+.item.card {
+  background-color: #967D72;
+  padding: 0.3em;
+  margin: 0.3em;
 
+  /*border-color: #27272B;
+  border-width: 4px;
+  border-style: solid;*/
+  border-radius: 0.1em;
+  box-shadow: 0.1em 0.2em #806A61;
 
+  float: left;
+  align-items: center;
+}
 
+.itemList {
+  float: right;
+  width: 40%;
+  height: 80vh;
+  overflow: scroll;
 
-/**************** {NameHere} CSS *********************/
-
+}
