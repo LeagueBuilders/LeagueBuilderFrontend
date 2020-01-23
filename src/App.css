@@ -251,6 +251,12 @@ body {
   margin: 1vh;
 }
 
+.itemDetail a {
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+}
+
 .itemsAndInfo {
   width: 39%;
 }

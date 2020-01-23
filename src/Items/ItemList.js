@@ -42,7 +42,6 @@ class ItemList extends Component {
     if (this.state.detailedView) {
       return <ItemDetail item={this.state.hovering} url={this.ImageUrl} />
     }
-    else return ''
   }
 
   renderItems = (itemObject) => {
@@ -62,10 +61,11 @@ class ItemList extends Component {
   }
 
   hideTooltip = (item) => {
-    this.setState({
-      hovering: null,
-      detailedView: false
-    });
+    //DO NOTHING
+    // this.setState({
+    //   hovering: null,
+    //   detailedView: false
+    // });
   }
 
 
