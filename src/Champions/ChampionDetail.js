@@ -52,7 +52,7 @@ const ChampionDetail = (props) => {
 					<h3>{champ.blurb}</h3>
 				</div>
 					<div className="statTable table stats">{statTable}</div>
-					<Link to={`/build/${champ.id}/Tets`}>
+					<Link to={`/build/${champ.id}`}>
 						<button>Create Build</button>
 					</Link>
 				</div>

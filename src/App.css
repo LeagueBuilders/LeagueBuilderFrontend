@@ -143,5 +143,14 @@ body {
   width: 40%;
   height: 80vh;
   overflow: scroll;
+}
 
+.itemDetail {
+  background-color: #967D72;
+  padding: 0.3em;
+  margin: 0.3em;
+  border-radius: 0.1em;
+  box-shadow: 0.1em 0.2em #806A61;
+  width: 55%;
+  float: left;
 }
