@@ -14,9 +14,17 @@ Dark Shades: #27272B;
 
 
 */
+
+/**************** General CSS *********************/
 body {
   background-color: #27272B;
 }
+
+.right {
+  float: right;
+}
+
+
 
 /**************** NavBar CSS *********************/
 .NavBar {
@@ -44,11 +52,39 @@ body {
 
 }
 /**************** ChampionList CSS *********************/
-#searchBar {
-  width: 80%;
+.searchBar {
+  width: 20.5rem;
+  height: 2rem;
   margin: auto;
-  text-align: center;
   color: #F2F0EF;
+  background-color: #fff;
+  border-radius: 0.2em;
+}
+
+.search {
+  width: 18rem;
+  height: 1.6rem;
+  margin-left: 0.4em;
+  overflow: visible;
+  border-style: none;
+  font-size: 1em;
+
+  outline: none;
+}
+
+.searchIcon {
+  width: 1.1rem;
+  height: 1.1rem;
+  border-style: solid;
+  border-color: #B34145;
+  border-radius: 1rem;
+  border-width: 0.1rem;
+  padding: 0.3rem;
+  margin-top: 0.05rem;
+}
+
+.searchIcon:active {
+  border-color: #f00;
 }
 
 .allChampionCard {
@@ -84,12 +120,34 @@ body {
 
 .champion-details {
   float:left;
-  margin-left: 2px;
+  margin-left: 5px;
 
   top: 30%;
+  width: 45%;
 }
+
+.champion-name {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  overflow: hidden;
+  font-size: 1.22em;
+}
+
 .title {
   width: 100%
+}
+
+.champion-tags {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.champion-tag {
+  list-style: none;
+  color: #cacaca;
+  font-size: 13px;
+  line-height: 16px;
 }
 
 /**************** Champion Detail CSS *********************/
