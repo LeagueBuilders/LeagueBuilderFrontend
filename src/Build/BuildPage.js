@@ -13,8 +13,24 @@ const BuildPage = (props) => {
   //   modifiedStats: {}
   // }
 
+  const saveBuild = (champ, inv) => {
+    fetch('http://127.0.0.1:3000/builds', {
+      method: 'POST',
+      headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+      body: JSON.stringify({
+        champion: champ,
+        inventory: inv,
+      })
+    }
+  )
+  .then(r=>r.json())
+  .then(r=>console.log)
+}
 
-  const showBuild = (({champ} = props) => {
+  const showBuild = (({champ, inventory} = props) => {
     if (props.champ){
     return (
       <div>
@@ -31,8 +47,10 @@ const BuildPage = (props) => {
           <div className="inventorySlot item6 item card"></div>
         </div>
 
+        <button onClick={()=>{saveBuild(champ.id, inventory)}}>SAVE</button>
+
         <ItemList />
-        
+
       </div>
     )}})
 

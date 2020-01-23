@@ -29,7 +29,9 @@ class App extends React.Component {
     search: "",
 
     //These states are used for Build PAge
-    inventory: []
+    inventory: [null, null, null, null, null, null],
+    baseStats: {},
+    modifiedStats: {},
   }
 
   componentDidMount(){
