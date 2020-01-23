@@ -4,7 +4,7 @@ import ChampionList from "./Champions/ChampionList.js"
 import ChampionDetail from "./Champions/ChampionDetail.js"
 import NavBar from "./Champions/NavBar.js"
 import { Route, Switch, withRouter } from 'react-router-dom'
-import BuildPage from './Build/BuildPage'
+import BuildPage from './Build/BuildPage.js'
 
 
 const LOL_VERSION = "10.1.1";
@@ -27,6 +27,9 @@ class App extends React.Component {
     positionFilterChamp: [],
     searchFilterChamp: [],
     search: "",
+
+    //These states are used for Build PAge
+    inventory: []
   }
 
   componentDidMount(){
@@ -125,7 +128,8 @@ class App extends React.Component {
   renderChamp = (champName) => {
     let id = this.fixId(champName.match.params.id)
 
-    return <ChampionDetail champ={this.state.champions[id]} />
+    return <ChampionDetail champ={this.state.champions[id]}
+      handleButton={this.onBuildButton} />
   }
 
   renderBuild = (champName) => {
@@ -133,6 +137,7 @@ class App extends React.Component {
 
     return  <BuildPage
               champ={this.state.champions[id]}
+              inventory={this.state.inventory}
             />
 
   }
@@ -145,6 +150,10 @@ class App extends React.Component {
 
     onClickLogo = () => {
       this.props.history.push('/')
+    }
+
+    onBuildButton = (path) => {
+      this.props.history.push(path)
     }
 
     onChangeSearchBar = (event) => {
@@ -219,7 +228,7 @@ class App extends React.Component {
          <Switch>
            <Route path="/" exact component={this.renderAllChamp} />
            <Route path="/champion/:id" render={this.renderChamp} />
-          <Route path="/build/:id" render={this.renderBuild} />
+           <Route path="/build/:id" render={this.renderBuild} />
         </Switch>
       </div>
     );

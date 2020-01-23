@@ -122,6 +122,9 @@ body {
 
 /**************** BuildPage CSS *********************/
 
+.buildPortrait {
+  float: left;
+}
 
 .item.card {
   background-color: #967D72;
@@ -141,16 +144,35 @@ body {
 .itemList {
   float: right;
   width: 40%;
-  height: 80vh;
+  height: 50vh;
   overflow: scroll;
+  bottom: 0%;
+  right: 0%;
+  position: fixed;
+
+}
+
+.detailPane {
+  float: right;
+  width: 40%;
+  height: 35vh;
+
+  right: 0%;
+  position: fixed;
 }
 
 .itemDetail {
+  font-size: .8em;
   background-color: #967D72;
   padding: 0.3em;
   margin: 0.3em;
   border-radius: 0.1em;
   box-shadow: 0.1em 0.2em #806A61;
-  width: 55%;
-  float: left;
+  width: 40%%;
+  height: 30vh;
+  overflow: scroll;
+}
+
+.inventorySlot {
+
 }

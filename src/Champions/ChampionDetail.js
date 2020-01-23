@@ -5,9 +5,8 @@ const ChampionDetail = (props) => {
 	const SplashUrl = 'http://ddragon.leagueoflegends.com/cdn/img/champion/splash/';
 
 
-	const showChamp = ({champ}=props) => {
+	const showChamp = ({champ, handleButton}=props) => {
 		if (champ){
-
 			let champSplashUrl = SplashUrl + champ.id + '_0.jpg'
 
 			const statTable = (
@@ -52,15 +51,15 @@ const ChampionDetail = (props) => {
 					<h3>{champ.blurb}</h3>
 				</div>
 					<div className="statTable table stats">{statTable}</div>
-					<Link to={`/build/${champ.id}`}>
-						<button>Create Build</button>
-					</Link>
+
+						<button onClick={()=>{handleButton(`/build/${champ.id}`)}}>
+							Create Build
+						</button>
 				</div>
 			)
 		}
 	}
 
-	console.log("Details", props)
 	return (
 	  <content>
 	  	 {showChamp()}

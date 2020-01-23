@@ -8,7 +8,7 @@ class ItemList extends Component {
     items: [],
     selectedItem: {},
     detailedView: false,
-    hovering: false
+    hovering: null
   }
 
   ImageUrl = 'http://ddragon.leagueoflegends.com/cdn/10.1.1/img/item/'
@@ -40,7 +40,7 @@ class ItemList extends Component {
 
   showDetail = () => {
     if (this.state.detailedView) {
-      return <ItemDetail item={this.state.selectedItem} url={this.ImageUrl} />
+      return <ItemDetail item={this.state.hovering} url={this.ImageUrl} />
     }
     else return ''
   }
@@ -56,12 +56,17 @@ class ItemList extends Component {
 
   showTooltip = (evt, item) => {
     this.setState({
-      hovering: true,
-    })
-    return (<ItemDetail item={item} />)
-
+      hovering: item,
+      detailedView: true
+    });
   }
 
+  hideTooltip = (item) => {
+    this.setState({
+      hovering: null,
+      detailedView: false
+    });
+  }
 
 
   render() {
@@ -69,7 +74,7 @@ class ItemList extends Component {
       <div>
         <div className='detailPane'>{this.showDetail()}</div>
         <div className='itemList'>
-          {this.renderItems(this.state.items).map(i => <ItemBox key={i} item={{i, ...this.state.items[i]}} url={this.ImageUrl} handleClick={this.clickedItem} handleHover={this.showTooltip} />)}
+          {this.renderItems(this.state.items).map(i => <ItemBox key={i} item={{i, ...this.state.items[i]}} url={this.ImageUrl} handleClick={this.clickedItem} handleHover={this.showTooltip} handleExit={this.hideTooltip} />)}
         </div>
       </div>
     );
