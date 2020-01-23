@@ -123,6 +123,8 @@ class App extends React.Component {
       case "Winsnao":
         id="XinZhao"
         break;
+      default:
+        break;
     }
     return id
   }
@@ -146,7 +148,6 @@ class App extends React.Component {
 
   // ***********  Event Handlers ************
     onClickChampion = (champ) => {
-      console.log("Clicked" , champ)
       this.props.history.push(`/champion/${champ.id}`)
     }
 
@@ -204,6 +205,8 @@ class App extends React.Component {
               break;
             case "winsnao":
               tempSearch = "xinzhao"
+              break;
+            default:
               break;
           }
 
