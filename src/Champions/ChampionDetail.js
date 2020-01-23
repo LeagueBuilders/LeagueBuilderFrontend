@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
 const ChampionDetail = (props) => {
 
 	const SplashUrl = 'http://ddragon.leagueoflegends.com/cdn/img/champion/splash/';
@@ -43,15 +42,14 @@ const ChampionDetail = (props) => {
 
 			return (
 				<div className="champDetail">
-					<img className="champSplash background" src={ champSplashUrl } />
+					<img className="champSplash background" src={ champSplashUrl } alt="ChampBackgroundImg"/>
+					<div className="statTable table stats right">{statTable}</div>
 					<div className="title">
 						<h1>{champ.name} -  {champ.title}</h1>
 					</div>
 					<div className="description info">
-					<h3>{champ.blurb}</h3>
-				</div>
-					<div className="statTable table stats">{statTable}</div>
-
+						<h3>{champ.blurb}</h3>
+					</div>
 						<button onClick={()=>{handleButton(`/build/${champ.id}`)}}>
 							Create Build
 						</button>

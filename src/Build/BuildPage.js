@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import ItemList from '../Items/ItemList';
 import ItemDetail from '../Items/ItemDetail';
 
@@ -20,7 +20,7 @@ const BuildPage = (props) => {
       <div>
         <ItemList />
         <div className="buildInfo">
-          <img className='buildPortrait' src={LoadScreenUrl + champ.id + '_0.jpg'} />
+          <img className='buildPortrait' src={LoadScreenUrl + champ.id + '_0.jpg'} alt="ChampProfileImage"/>
           <h2>{champ.name} Build</h2>
 
           <div className="inventory">
