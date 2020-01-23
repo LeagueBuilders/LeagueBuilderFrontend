@@ -2,6 +2,9 @@ import React from 'react';
 import ChampionCard from "./ChampionCard.js";
 
 class ChampionList extends React.Component {
+
+
+
   	//To show all the champions
   	showAllChamps = () => {
   		let allChamps = this.props.filterChamp
@@ -24,13 +27,15 @@ class ChampionList extends React.Component {
   	render() {
 	  	return (
 	  		<div>
-	  			<div id="searchBar">
-	  				<form>
-			        	<input type="text" 
-			        		placeholder="Search" 
-			        		value={this.props.search} 
-			        		onChange={(event) => this.props.onChangeSearchBar(event)}/>
-			        </form>
+	  			<div className="searchBar">
+			        <input type="text" 
+			        	className="search"
+			        	placeholder="Search for a Champion by Name" 
+			        	value={this.props.search} 
+			        	onChange={(event) => this.props.onChangeSearchBar(event)}/>
+			        <img className="searchIcon right" 
+			        	src='/search-512.png'
+			        	alt="SearchLogo"/> 
 	  			</div>
 	  			<div className="allChampionCard">
 	  				{this.showAllChamps()}
