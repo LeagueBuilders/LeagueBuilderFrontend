@@ -41,13 +41,13 @@ const BuildPage = (props) => {
           <h2>{champ.name} Build</h2>
 
           <div className="inventory">
-            <div className="inventorySlot item1 item card">{inventory[0]}</div>
-            <div className="inventorySlot item2 item card">{inventory[1]}</div>
-            <div className="inventorySlot item3 item card">{inventory[2]}</div>
-            <br />
-            <div className="inventorySlot item4 item card">{inventory[3]}</div>
-            <div className="inventorySlot item5 item card">{inventory[4]</div>
-            <div className="inventorySlot item6 item card">{inventory[5]}</div>
+            // <div className="inventorySlot item1 item card">{inventory[0]}</div>
+            // <div className="inventorySlot item2 item card">{inventory[1]}</div>
+            // <div className="inventorySlot item3 item card">{inventory[2]}</div>
+            // <br />
+            // <div className="inventorySlot item4 item card">{inventory[3]}</div>
+            // <div className="inventorySlot item5 item card">{inventory[4]</div>
+            // <div className="inventorySlot item6 item card">{inventory[5]}</div>
           </div>
           <button onClick={()=>{saveBuild(champ.id, inventory)}}>SAVE</button>
         </div>
