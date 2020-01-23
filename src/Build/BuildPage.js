@@ -27,7 +27,7 @@ const BuildPage = (props) => {
     }
   )
   .then(r=>r.json())
-  .then(r=>console.log)
+  .then(r=>{console.log("finished post", r)})
 }
 
   const showBuild = (({champ, inventory} = props) => {
@@ -48,6 +48,7 @@ const BuildPage = (props) => {
             <div className="inventorySlot item5 item card"></div>
             <div className="inventorySlot item6 item card"></div>
           </div>
+          <button onClick={()=>{saveBuild(champ.id, inventory)}}>SAVE</button>
         </div>
       </div>
 
