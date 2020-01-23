@@ -23,11 +23,18 @@ class ItemList extends Component {
     })
   }
 
+  //******* Functions to add item to item list
+
   chooseItem = (itemClicked) => {
+    console.log("Choosing Items", itemClicked)
+    console.log("Items", this.state.items)
     this.setState({
       selectedItem: itemClicked
     })
   }
+
+
+
 
   toggleDetail = (item) => {
     this.setState({detailedView: !this.state.detailedView})
@@ -42,7 +49,6 @@ class ItemList extends Component {
     if (this.state.detailedView) {
       return <ItemDetail item={this.state.hovering} url={this.ImageUrl} />
     }
-    else return ''
   }
 
   renderItems = (itemObject) => {
@@ -62,10 +68,11 @@ class ItemList extends Component {
   }
 
   hideTooltip = (item) => {
-    this.setState({
-      hovering: null,
-      detailedView: false
-    });
+    //DO NOTHING
+    // this.setState({
+    //   hovering: null,
+    //   detailedView: false
+    // });
   }
 
 

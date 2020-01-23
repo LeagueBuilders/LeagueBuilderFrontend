@@ -251,10 +251,17 @@ body {
   margin: 1vh;
 }
 
+.itemDetail a {
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+}
+
 .itemsAndInfo {
   width: 39%;
 }
 
 .inventorySlot {
-
+  width: 64px;
+  height: 64px;
 }
