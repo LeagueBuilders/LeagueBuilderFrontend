@@ -71,7 +71,7 @@ class ItemList extends Component {
 
   render() {
     return (
-      <div>
+      <div className="itemsAndInfo right">
         <div className='detailPane'>{this.showDetail()}</div>
         <div className='itemList'>
           {this.renderItems(this.state.items).map(i => <ItemBox key={i} item={{i, ...this.state.items[i]}} url={this.ImageUrl} handleClick={this.clickedItem} handleHover={this.showTooltip} handleExit={this.hideTooltip} />)}
