@@ -23,11 +23,18 @@ class ItemList extends Component {
     })
   }
 
+  //******* Functions to add item to item list
+
   chooseItem = (itemClicked) => {
+    console.log("Choosing Items", itemClicked)
+    console.log("Items", this.state.items)
     this.setState({
       selectedItem: itemClicked
     })
   }
+
+
+
 
   toggleDetail = (item) => {
     this.setState({detailedView: !this.state.detailedView})
