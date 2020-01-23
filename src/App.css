@@ -181,6 +181,16 @@ body {
 
 /**************** BuildPage CSS *********************/
 
+.buildInfo {
+  width: 60%;
+  height: 80.5vh;
+
+  border-radius: 0.2em;
+  border-color: #A49691;
+  border-width: 0.1em;
+  border-style: solid;
+}
+
 .buildPortrait {
   float: left;
 }
@@ -202,22 +212,29 @@ body {
 
 .itemList {
   float: right;
-  width: 40%;
-  height: 50vh;
+  width: 100%;
+  height: 48vh;
   overflow: scroll;
-  bottom: 0%;
   right: 0%;
-  position: fixed;
+
+  border-style: solid;
+  border-color: #A49691;
+  border-width: 0.1em;
+  border-radius: 0.4em;
 
 }
 
 .detailPane {
   float: right;
-  width: 40%;
-  height: 35vh;
-
+  width: 100%;
+  height: 32vh;
   right: 0%;
-  position: fixed;
+  margin-bottom: 0.2em;
+
+  border-style: solid;
+  border-color: #A49691;
+  border-width: 0.1em;
+  border-radius: 0.4em;
 }
 
 .itemDetail {
@@ -227,9 +244,18 @@ body {
   margin: 0.3em;
   border-radius: 0.1em;
   box-shadow: 0.1em 0.2em #806A61;
-  width: 40%%;
+  width: 96.5%;
   height: 30vh;
   overflow: scroll;
+}
+
+.itemDetail img {
+  float: left;
+  margin: 1vh;
+}
+
+.itemsAndInfo {
+  width: 39%;
 }
 
 .inventorySlot {
