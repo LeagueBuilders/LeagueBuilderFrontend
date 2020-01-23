@@ -21,6 +21,7 @@ const CHAMP_IMG_URL = `http://ddragon.leagueoflegends.com/cdn/${LOL_VERSION}/img
   search - The data in search bar
 
 */
+
 class App extends React.Component {
   state ={
     champions: [],
@@ -142,11 +143,23 @@ class App extends React.Component {
     return  <BuildPage
               champ={this.state.champions[id]}
               inventory={this.state.inventory}
+              onClickItem={this.onClickItem}
             />
 
   }
 
   // ***********  Event Handlers ************
+
+    onClickItem = (item) => {
+      let empty = this.state.inventory.findIndex(n=>n===null); if (empty != -1) {
+        let newInv = [...this.state.inventory]
+        newInv[empty]= item
+        this.setState({
+        inventory: newInv
+      })
+    }
+  }
+
     onClickChampion = (champ) => {
       this.props.history.push(`/champion/${champ.id}`)
     }
