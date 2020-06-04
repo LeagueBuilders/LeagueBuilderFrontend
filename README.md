@@ -2,7 +2,7 @@
 
 ## A fast and powerful way to test out new item build for the game League of Legends
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=CLmNh6H1i5M " target="_blank"><img src="http://img.youtube.com/vi/CLmNh6H1i5M /0.jpg" alt="Demo Video" width="560" height="315" border="10" /></a>
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=CLmNh6H1i5M " target="_blank"><img src="http://img.youtube.com/vi/CLmNh6H1i5M/0.jpg" alt="Demo Video" width="560" height="315" border="10" /></a>
 
 ### Features
 * Stats for every character in League of Legends
