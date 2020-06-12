@@ -1,6 +1,6 @@
 # League Builder
 
-## A fast and powerful way to test out new item build for the game League of Legends
+## A fast and powerful way to test out new item builds for the game League of Legends
 
 ### Demo:
 
